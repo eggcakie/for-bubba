@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For My Bubba</title>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#fff5f7;--bg2:#ffe3ea;--ink:#c76f86;--card:rgba(255,255,255,.72);--shadow:rgba(209,142,156,.28);--btn:#ff8fab;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#2a1a21;--bg2:#3a2230;--ink:#f3b3c4;--card:rgba(255,255,255,.08);--shadow:rgba(0,0,0,.4)}}
+:root[data-theme="dark"]{--bg1:#2a1a21;--bg2:#3a2230;--ink:#f3b3c4;--card:rgba(255,255,255,.08);--shadow:rgba(0,0,0,.4)}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:radial-gradient(circle at 50% 30%,var(--bg1),var(--bg2));display:flex;align-items:center;justify-content:center;overflow:hidden;font-family:'Special Elite','Courier New',monospace;color:var(--ink)}
+.heart{position:fixed;top:-60px;pointer-events:none;z-index:1;animation:fall linear forwards;filter:drop-shadow(0 3px 4px rgba(214,100,130,.25))}
+@keyframes fall{0%{transform:translate(0,-10vh) rotate(-12deg);opacity:0}10%{opacity:.95}50%{transform:translate(var(--drift),55vh) rotate(14deg)}100%{transform:translate(0,115vh) rotate(-12deg);opacity:.9}}
+#open{position:relative;z-index:5;border:0;background:none;cursor:pointer;font:inherit;color:var(--ink);text-align:center}
+#open svg{width:120px;animation:beat 1.2s ease-in-out infinite;filter:drop-shadow(0 8px 12px var(--shadow))}
+#open span{display:block;margin-top:12px;font-size:20px}
+@keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.13)}}
+#card{position:relative;z-index:5;display:none;flex-direction:column;align-items:center;text-align:center;padding:22px 16px;max-width:760px;width:100%}
+#card.pop{display:flex;animation:pop .9s cubic-bezier(.2,1.5,.4,1) both}
+@keyframes pop{0%{transform:scale(.2) translateY(60px);opacity:0}100%{transform:scale(1);opacity:1}}
+.row{display:flex;align-items:flex-end;justify-content:center;gap:clamp(4px,3vw,26px)}
+.rose{width:clamp(70px,20vw,150px);flex:none;transform-origin:50% 100%;animation:sway 4s ease-in-out infinite alternate;filter:drop-shadow(0 6px 8px var(--shadow))}
+.rose.r{animation-delay:-2s;transform:scaleX(-1)}
+@keyframes sway{from{rotate:-4deg}to{rotate:4deg}}
+.gif{width:clamp(180px,48vw,280px);aspect-ratio:1/.9;background:var(--card);border-radius:28px;padding:8px;box-shadow:0 12px 30px var(--shadow);backdrop-filter:blur(6px)}
+.gif svg,.gif img{width:100%;height:100%;border-radius:20px;display:block;object-fit:cover}
+.bears{animation:squish 2.4s ease-in-out infinite;transform-origin:50% 90%}
+@keyframes squish{0%,100%{transform:scale(1)}50%{transform:scale(1.04,.97)}}
+.msg{margin-top:28px;min-height:190px}
+.title{font-size:clamp(24px,6vw,34px);line-height:1.4;margin:0 0 14px}
+.body{font-size:clamp(16px,4.2vw,20px);line-height:1.8;margin:0}
+.sig{display:block;margin-top:14px;font-size:clamp(18px,4.5vw,22px)}
+.cursor{display:inline-block;width:2px;height:1em;background:var(--ink);vertical-align:-2px;margin-left:2px;animation:blink .8s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+<defs>
+<radialGradient id="pw" cx="50%" cy="40%" r="65%"><stop offset="0" stop-color="#fff"/><stop offset=".7" stop-color="#fffafa"/><stop offset="1" stop-color="#f3e4e8"/></radialGradient>
+<linearGradient id="lf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b7d8b0"/><stop offset="1" stop-color="#7fb48a"/></linearGradient>
+<symbol id="roseSym" viewBox="0 0 100 150">
+<path d="M50 80 C48 105 52 125 50 150" stroke="#8fbf93" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M50 118 C28 108 18 112 12 102 C30 98 44 104 50 118Z" fill="url(#lf)"/>
+<path d="M50 132 C70 124 82 126 90 116 C70 112 54 118 50 132Z" fill="url(#lf)"/>
+<g transform="translate(0,-4)" stroke="#e9d3d9" stroke-width=".9" fill="url(#pw)">
+<g id="outer"><ellipse cx="50" cy="30" rx="17" ry="25" transform="rotate(0 50 50)"/><ellipse cx="50" cy="30" rx="17" ry="25" transform="rotate(60 50 50)"/><ellipse cx="50" cy="30" rx="17" ry="25" transform="rotate(120 50 50)"/><ellipse cx="50" cy="30" rx="17" ry="25" transform="rotate(180 50 50)"/><ellipse cx="50" cy="30" rx="17" ry="25" transform="rotate(240 50 50)"/><ellipse cx="50" cy="30" rx="17" ry="25" transform="rotate(300 50 50)"/></g>
+<ellipse cx="50" cy="37" rx="13" ry="18" transform="rotate(20 50 50)"/><ellipse cx="50" cy="37" rx="13" ry="18" transform="rotate(92 50 50)"/><ellipse cx="50" cy="37" rx="13" ry="18" transform="rotate(164 50 50)"/><ellipse cx="50" cy="37" rx="13" ry="18" transform="rotate(236 50 50)"/><ellipse cx="50" cy="37" rx="13" ry="18" transform="rotate(308 50 50)"/>
+<circle cx="50" cy="50" r="11"/>
+<path d="M44 50 a6 6 0 1 1 6 6 a3.500 3.500 0 1 1 -3.500 -3.500" fill="none" stroke="#e2c6ce" stroke-width="1.200"/>
+</g>
+</symbol>
+<symbol id="heartBig" viewBox="0 0 32 29"><path d="M16 28C6 20 1 14 1 8.500 1 4 4.500 1 8.500 1c3 0 5.700 1.700 7.500 4.500C17.800 2.700 20.500 1 23.500 1 27.500 1 31 4 31 8.500 31 14 26 20 16 28z" fill="#ff8fab"/><ellipse cx="9" cy="8" rx="3.200" ry="2" fill="#fff" opacity=".7" transform="rotate(-35 9 8)"/></symbol>
+</defs>
+</svg>
+
+<button id="open" aria-label="Open your card">
+<svg viewBox="0 0 32 29"><use href="#heartBig"/></svg>
+<span>tap to open, bubba</span>
+</button>
+
+<div id="card">
+<div class="row">
+<svg class="rose" viewBox="0 0 100 150"><use href="#roseSym"/></svg>
+<div class="gif" id="gifBox">
+<!-- To use your own gif, replace this whole <svg> with: <img src="data:image/gif;base64,YOUR_BASE64" alt="Milk and Mocha hugging"> -->
+<svg viewBox="0 0 200 180" aria-label="Two little bears hugging">
+<rect width="200" height="180" rx="16" fill="#fff0f3"/>
+<g class="bears">
+<!-- Mocha (brown) -->
+<circle cx="50" cy="52" r="12" fill="#b98a6a"/><circle cx="50" cy="52" r="6" fill="#e8c4a8"/>
+<circle cx="100" cy="52" r="12" fill="#b98a6a"/><circle cx="100" cy="52" r="6" fill="#e8c4a8"/>
+<ellipse cx="75" cy="135" rx="33" ry="36" fill="#b98a6a"/>
+<circle cx="75" cy="82" r="36" fill="#b98a6a"/>
+<ellipse cx="75" cy="94" rx="14" ry="10" fill="#e8c4a8"/>
+<path d="M56 78 q6 -7 12 0 M82 78 q6 -7 12 0" stroke="#4a2f22" stroke-width="3" fill="none" stroke-linecap="round"/>
+<ellipse cx="75" cy="90" rx="4" ry="3" fill="#4a2f22"/>
+<path d="M69 96 q6 6 12 0" stroke="#4a2f22" stroke-width="2.200" fill="none" stroke-linecap="round"/>
+<circle cx="52" cy="92" r="6" fill="#ff9fb5" opacity=".6"/><circle cx="98" cy="92" r="6" fill="#ff9fb5" opacity=".6"/>
+<!-- Milk (cream) -->
+<circle cx="100" cy="58" r="12" fill="#fff6ec" stroke="#ead2bb" stroke-width="2"/><circle cx="100" cy="58" r="6" fill="#ffd9d9"/>
+<circle cx="150" cy="58" r="12" fill="#fff6ec" stroke="#ead2bb" stroke-width="2"/><circle cx="150" cy="58" r="6" fill="#ffd9d9"/>
+<ellipse cx="125" cy="140" rx="33" ry="34" fill="#fff6ec" stroke="#ead2bb" stroke-width="2"/>
+<circle cx="125" cy="88" r="36" fill="#fff6ec" stroke="#ead2bb" stroke-width="2"/>
+<path d="M106 84 q6 -7 12 0 M132 84 q6 -7 12 0" stroke="#4a2f22" stroke-width="3" fill="none" stroke-linecap="round"/>
+<ellipse cx="125" cy="95" rx="4" ry="3" fill="#6b4a3a"/>
+<path d="M119 101 q6 6 12 0" stroke="#6b4a3a" stroke-width="2.200" fill="none" stroke-linecap="round"/>
+<circle cx="102" cy="97" r="6" fill="#ff9fb5" opacity=".6"/><circle cx="148" cy="97" r="6" fill="#ff9fb5" opacity=".6"/>
+<!-- hug arms -->
+<path d="M52 122 Q100 108 150 126" stroke="#b98a6a" stroke-width="15" fill="none" stroke-linecap="round"/>
+<path d="M148 118 Q100 134 52 130" stroke="#fff6ec" stroke-width="15" fill="none" stroke-linecap="round"/>
+<path d="M148 118 Q100 134 52 130" stroke="#ead2bb" stroke-width="1.500" fill="none" stroke-linecap="round" opacity=".6"/>
+</g>
+<use href="#heartBig" x="86" y="6" width="28" height="26"/>
+</svg>
+</div>
+<svg class="rose r" viewBox="0 0 100 150"><use href="#roseSym"/></svg>
+</div>
+<div class="msg">
+<h1 class="title" id="t1"></h1>
+<p class="body" id="t2"></p>
+</div>
+</div>
+
+<script>
+var colors=["#ff8fab","#ffb3c6","#ff6f91","#ffc2d4","#f78fb3"];
+function makeHeart(){
+  var h=document.createElement('div'),s=22+Math.random()*30;
+  h.className='heart';
+  h.style.width=s+'px';h.style.left=Math.random()*96+'vw';
+  h.style.setProperty('--drift',(Math.random()*80-40)+'px');
+  h.style.animationDuration=(6+Math.random()*4)+'s';
+  h.innerHTML='<svg viewBox="0 0 32 29" width="100%"><path d="M16 28C6 20 1 14 1 8.500 1 4 4.500 1 8.500 1c3 0 5.700 1.700 7.500 4.500C17.800 2.700 20.500 1 23.500 1 27.500 1 31 4 31 8.500 31 14 26 20 16 28z" fill="'+colors[Math.floor(Math.random()*colors.length)]+'"/><ellipse cx="9" cy="8" rx="3.200" ry="2" fill="#fff" opacity=".7" transform="rotate(-35 9 8)"/></svg>';
+  document.body.appendChild(h);
+  setTimeout(function(){h.remove()},10500);
+}
+function type(el,text,speed,cb){
+  var i=0,c=document.createElement('span');c.className='cursor';
+  el.textContent='';el.appendChild(c);
+  (function step(){
+    if(i<text.length){c.before(document.createTextNode(text[i++]));setTimeout(step,speed)}
+    else{c.remove();cb&&cb()}
+  })();
+}
+document.getElementById('open').addEventListener('click',function(){
+  this.style.display='none';
+  document.getElementById('card').classList.add('pop');
+  for(var i=0;i<8;i++)setTimeout(makeHeart,i*180);
+  setInterval(makeHeart,450);
+  setTimeout(function(){
+    type(document.getElementById('t1'),'Hi bubba, I love you so much!',60,function(){
+      var b=document.getElementById('t2');
+      type(b,'I made this for you hehe, hope you like it :33',45,function(){
+        var s=document.createElement('span');s.className='sig';b.appendChild(s);
+        type(s,'love, your smeeg',70);
+      });
+    });
+  },900);
+});
+</script>
+</body>
+</html>
